@@ -34,22 +34,22 @@ def music_library_details(request, pk):
         song.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['PUT'])
+@api_view(['PATCH'])
 def music_library_like(request, pk):
     song = get_object_or_404(Song, pk=pk)
-    song.num_likes += 1
-    if request.method == 'PUT':
-        serializer = SongSerializer(song, data=request.data)
+    if request.method == 'PATCH':
+        song.num_likes += 1
+        serializer = SongSerializer(song, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-@api_view(['PUT'])
+@api_view(['PATCH'])
 def music_library_dislike(request, pk):
     song = get_object_or_404(Song, pk=pk)
-    song.num_likes -= 1
-    if request.method == 'PUT':
-        serializer = SongSerializer(song, data=request.data)
+    if request.method == 'PATCH':
+        song.num_likes -= 1
+        serializer = SongSerializer(song, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_206_PARTIAL_CONTENT)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
