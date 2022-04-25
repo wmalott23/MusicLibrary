@@ -149,11 +149,11 @@
 		{
 			"name": "like_song",
 			"request": {
-				"method": "PUT",
+				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"True\"\r\n}",
+					"raw": "{\r\n    \"liked\": \"True\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -184,11 +184,11 @@
 		{
 			"name": "dislike_song",
 			"request": {
-				"method": "PUT",
+				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"False\"\r\n}",
+					"raw": "{\r\n    \"liked\": \"False\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
