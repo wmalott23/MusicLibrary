@@ -41,7 +41,7 @@ def music_library_like(request, pk):
         serializer = SongSerializer(song, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
 @api_view(['PUT'])
 def music_library_dislike(request, pk):
@@ -50,4 +50,4 @@ def music_library_dislike(request, pk):
         serializer = SongSerializer(song, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_206_PARTIAL_CONTENT)

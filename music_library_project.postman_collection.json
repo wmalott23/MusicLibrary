@@ -36,7 +36,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"False\",\r\n    \"num_likes\": 0\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,7 +94,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Smol Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"False\",\r\n    \"num_likes\": 0\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -140,6 +140,76 @@
 						"api",
 						"music_library",
 						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like_song",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"True\",\r\n    \"num_likes\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/music_library/liked/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"music_library",
+						"liked",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dislike_song",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Big Stretch\",\r\n    \"artist\": \"Puar\",\r\n    \"album\": \"Another Spotify\",\r\n    \"release_date\": \"2022-09-01\",\r\n    \"genre\": \"more lofi\",\r\n    \"liked\": \"False\",\r\n    \"num_likes\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/music_library/liked/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"music_library",
+						"liked",
+						"2",
 						""
 					]
 				}
