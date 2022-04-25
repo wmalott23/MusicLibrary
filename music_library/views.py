@@ -53,3 +53,12 @@ def music_library_dislike(request, pk):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['PATCH'])
+def music_library_image(request, pk):
+    song = get_object_or_404(Song, pk=pk)
+    if request.method == 'PATCH':
+        serializer = SongSerializer(song, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -6,4 +6,5 @@ urlpatterns = [
     path('<int:pk>/', views.music_library_details),
     path('liked/<int:pk>/', views.music_library_like),
     path('disliked/<int:pk>/', views.music_library_dislike),
+    path('image/<int:pk>/', views.music_library_image),
 ]
