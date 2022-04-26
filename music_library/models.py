@@ -10,4 +10,4 @@ class Song(models.Model):
     genre = models.CharField(max_length=40)
     liked = models.BooleanField()
     img_url = models.CharField(max_length=255, null=True, blank=True)
-    num_likes = models.IntegerField()
+    num_likes = models.IntegerField(null=True)
